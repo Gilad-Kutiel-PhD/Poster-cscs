@@ -1,6 +1,34 @@
 \documentclass[]{tikzposter}
 \usepackage[utf8]{inputenc}
 \usetheme{Simple}
+\hfuzz=500pt
+
+\defineinnerblockstyle{sampleblockstyle}{
+	titlewidthscale=1
+	, bodywidthscale=1
+	, titleleft
+	, titleoffsetx=0pt
+	, titleoffsety=0pt
+	, bodyoffsetx=0mm
+	, bodyoffsety=0mm
+	, bodyverticalshift=5mm
+	, roundedcorners=0
+	, linewidth=2pt
+	, titleinnersep=6mm
+	, bodyinnersep=1mm
+}{
+\ifBlockHasTitle
+\draw[
+	color=framecolor
+	, fill=innerblocktitlebgcolor
+	, rounded corners=\blockroundedcorners
+] 
+(innerblocktitle.south west) rectangle (innerblocktitle.north east);
+\fi
+}
+
+% \useblockstyle{Minimal}
+\useinnerblockstyle{sampleblockstyle}
 \tikzposterlatexaffectionproofoff
 
 \setlength{\tabcolsep}{12pt}
@@ -11,17 +39,17 @@
 \begin{document}
 \maketitle
 \begin{columns}
-\column{0.33}
+\column{0.32}
 
 \input{block-greek-alphabet}
 \input{block-e}
 
-\column{0.33}
+\column{0.35}
 
 \input{block-abstract-algebra}
 \input{block-linear-algebra}
 
-\column{0.33}
+\column{0.35}
 
 \input{block-probability}
 \input{block-complexity}
