@@ -4,7 +4,6 @@
 *.gz
 *.swp
 *.log
-*.pdf
 *.aux
 *.bbl
 *.blg
